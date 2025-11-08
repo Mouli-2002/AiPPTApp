@@ -1,0 +1,35 @@
+import React, {Component} from 'react'
+import './index.css'
+
+class PPTPreview extends Component {
+  render() {
+    return (
+      <div className="ppt-preview">
+        <h2>Preview</h2>
+        {this.props.slides.map((slide, idx) => (
+          <div key={idx} className="slide-card">
+            <h3>{slide.title}</h3>
+            {slide.subtitle && <p className="subtitle">{slide.subtitle}</p>}
+            {slide.image && (
+              <img
+                src={slide.image}
+                alt="Slide visual"
+                className="slide-image"
+              />
+            )}
+            {slide.bullets && (
+              <ul>
+                {slide.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    )
+  }
+}
+
+export default PPTPreview
+
