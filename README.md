@@ -11,6 +11,21 @@ Designed for smooth user experience, modern UI, and instant slide creation.
 📂 Modular structure: Reusable components for easier maintenance and scalability.
 🔄 Intuitive flow: Generated results appear above the search bar for easy reference.
 
+📂 Project Structure:
+src/
+   components/ 
+       ChatBox/
+          index.js
+          index.css
+       PPTPreview/ 
+          index.js
+          index.css
+       GeminiAPI.js
+       formatSlides.js
+    App.js
+    App.css 
+    index.js
+
 🛠️ Technology Stack:
 React (Class Components) – Frontend UI logic.
 Gemini AI API – AI-powered text-to-slide generation.
