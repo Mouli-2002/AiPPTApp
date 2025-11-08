@@ -1,0 +1,32 @@
+export function formatSlides(raw) {
+  try {
+    const slides = JSON.parse(raw)
+    if (Array.isArray(slides)) {
+      return slides.map(slide => ({
+        title: slide.title || 'Untitled Slide',
+        subtitle: slide.subtitle || '',
+        bullets: Array.isArray(slide.bullets) ? slide.bullets : [],
+        image: slide.image || null,
+      }))
+    }
+    return [
+      {
+        title: slides.title || 'Untitled Slide',
+        subtitle: slides.subtitle || '',
+        bullets: Array.isArray(slides.bullets) ? slides.bullets : [],
+        image: slides.image || null,
+      },
+    ]
+  } catch (err) {
+    console.error('Error parsing slides:', err)
+    return [
+      {
+        title: 'Error',
+        subtitle: '',
+        bullets: ['Could not parse Gemini output'],
+        image: null,
+      },
+    ]
+  }
+}
+
